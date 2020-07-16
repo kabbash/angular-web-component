@@ -34,14 +34,14 @@ export class BookListComponent implements OnInit {
     console.log('before api call');
     this.http.get('https://api.github.com/').subscribe((data:any) => {
       console.log(data);
-      this.message = data.current_user_url;
+     // this.message = data.current_user_url;
       setTimeout(() => {
         this.bookService.message = 'after time out';
       }, 1000);
     })
     this.bookService.subeject.subscribe(data => {
+      console.log(data + 'inside subject');
       this.message = data;
-       this.cd.detectChanges();
     })
 
     setTimeout(() => {

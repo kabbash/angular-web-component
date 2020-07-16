@@ -7,7 +7,7 @@ export class BookService {
     message = 'new value';
     subeject = new Subject<string>()
     constructor(private http: HttpClient) {
-        this.getData();
+        console.log('inside service cons')
         this.subeject.next('test subject');
     }
     getData() {

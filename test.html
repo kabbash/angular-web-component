@@ -4,6 +4,21 @@
         <script type="text/javascript" src="./dist/book-list/polyfills.js"></script>
         <script type="text/javascript" src="./dist/book-list/main.js"></script>
         
-        <book-list 'phoneNumber'='ddddd'>[{"phoneNumber":121212}]</book-list>
+        <book-list 
+        books="[{&quot;name&quot;:&quot;10% Happier&quot;,&quot;description&quot;:&quot;Practicing meditation and mindfulness will make you at least 10 percent happier.&quot;},{&quot;name&quot;:&quot;The 10X Rule&quot;,&quot;description&quot;:&quot;The biggest mistake most people make in life is not setting goals high enough.&quot;},{&quot;name&quot;:&quot;A Short Guide to a Happy Life&quot;,&quot;description&quot;:&quot;The only thing you have that nobody else has is control of your life.&quot;}]">[{"phoneNumber":121212}]</book-list>
     </body>
+    <!-- <script>
+        var bookList = document.getElementsByTagName('book-list')[0];
+        console.log(bookList);
+        console.log(bookList.getAttribute('books'));
+        const books = [
+            {
+                name: 'kabbash',
+                description: 'ay haga'
+            }
+        ]
+        setTimeout(() => {
+            bookList.setAttribute('books',JSON.stringify(books));
+        }, 2000);
+    </script> -->
 </html>
