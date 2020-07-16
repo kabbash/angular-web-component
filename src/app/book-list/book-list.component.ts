@@ -25,14 +25,14 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.bookService.getData().subscribe(data => {
-    //   this.message = data;
-    // });
-    // console.log('before api call');
-    // this.http.get('https://api.github.com/').subscribe((data:any) => {
-    //   console.log(data);
-    //   this.message = data.current_user_url;
-    // })
+    this.bookService.getData().subscribe(data => {
+      this.message = data;
+    });
+    console.log('before api call');
+    this.http.get('https://api.github.com/').subscribe((data:any) => {
+      console.log(data);
+      this.message = data.current_user_url;
+    })
     this.bookService.subeject.subscribe(data => {
       this.message = data;
        this.cd.detectChanges();
