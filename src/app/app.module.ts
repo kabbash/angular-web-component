@@ -7,6 +7,7 @@ import { BookService } from 'src/app/book.service';
 import {RouterModule, Routes} from '@angular/router'
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http'
+import {ElementZoneStrategyFactory} from 'elements-zone-strategy'
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +32,7 @@ const routes: Routes = [
 })
 export class AppModule {
   constructor(private injector: Injector) {
+    const strategyFactory = new ElementZoneStrategyFactory(BookListComponent , injector)
     const customElement = createCustomElement(BookListComponent, { injector });
     customElements.define('book-list', customElement);
   }

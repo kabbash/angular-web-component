@@ -17,6 +17,9 @@ export class BookListComponent implements OnInit {
     this.booksList = JSON.parse(books);
   }
 
+  @Input()
+  phoneNumber = '';
+
   @Output('bookSelected') bookSelected = new EventEmitter<any>();
   message = '';
   constructor(public bookService: BookService, private http: HttpClient, private cd: ChangeDetectorRef) {
@@ -32,11 +35,19 @@ export class BookListComponent implements OnInit {
     this.http.get('https://api.github.com/').subscribe((data:any) => {
       console.log(data);
       this.message = data.current_user_url;
+      setTimeout(() => {
+        this.bookService.message = 'after time out';
+      }, 1000);
     })
     this.bookService.subeject.subscribe(data => {
       this.message = data;
        this.cd.detectChanges();
     })
+
+    setTimeout(() => {
+      this.bookService.message = 'after time out11111111';
+    }, 5000);
+    
   }
 
   selected(book: any) {

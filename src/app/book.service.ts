@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { Subject } from "rxjs/internal/Subject";
 @Injectable()
 export class BookService {
-    message = 'initial value';
+    message = 'new value';
     subeject = new Subject<string>()
     constructor(private http: HttpClient) {
         this.getData();
